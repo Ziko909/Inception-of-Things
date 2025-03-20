@@ -1,0 +1,31 @@
+# Ignore Vagrant and VirtualBox files
+.vagrant/
+*.box
+*.log
+
+# Ignore token or secret files
+token
+
+# Ignore temporary shell execution files
+*.sh~
+
+# Ignore system generated files
+.DS_Store
+Thumbs.db
+
+# Ignore editor/IDE files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.idea/
+.vscode/
+
+# Ignore any build or output directories if any appear later
+build/
+output/
+
+# Optional: ignore Linux user history/cache
+*.bash_history
+*.bashrc~
+.cache/
