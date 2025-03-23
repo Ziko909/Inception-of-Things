@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app2-html
+data:
+  index.html: |
+    <html>
+      <head><title>App2</title></head>
+      <body><h1>This is App2</h1></body>
+    </html>

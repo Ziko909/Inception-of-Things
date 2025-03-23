@@ -1,0 +1,49 @@
+# Vagrant
+.vagrant/
+*.box
+
+# Kubernetes / K3s
+*.log
+*.pid
+*.lock
+*.yaml~  # backup/swap yaml files from editors
+
+# Shared folders and synced content
+*.swp
+*.swo
+*~
+
+# Editor-specific
+.vscode/
+.idea/
+*.iml
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Scripts/output
+scripts/*.log
+scripts/*.tmp
+scripts/*.bak
+
+# Misc
+*.tar
+*.gz
+*.zip
+*.bak
+*.old
+
+# Linux core dumps
+core
+
+# SSH keys or secrets (if any are added manually)
+*.pem
+*.key
+*.crt
+*.token
+
+# Hosts-specific mappings (if exported)
+hosts
