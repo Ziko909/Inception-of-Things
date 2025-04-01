@@ -22,6 +22,10 @@ k3d cluster create iot-cluster \
   --port "8888:30080@loadbalancer" \
   --wait
 
+# Create and label namespaces
+kubectl create namespace dev || true
+kubectl label namespace dev argocd.argoproj.io/managed-by=argocd
+
 # Install Argo CD
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
