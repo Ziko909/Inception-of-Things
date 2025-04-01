@@ -2,7 +2,7 @@
 set -ex
 
 # Apply Argo CD application definition
-kubectl apply -f Zaabou-Iot/argocd-app.yaml
+kubectl apply -f ../confs/argocd/application.yaml
 
 # Verify sync status
 echo "Waiting for Argo CD to sync..."
