@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Ziko909/Inception-of-Things
-    targetRevision: HEAD
-    path: 
+    repoURL: https://github.com/Ziko909/Inception-of-Things.git 
+    targetRevision: main                                        
+    path: p3/confs/app                                        
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
