@@ -1,0 +1,33 @@
+global:
+  edition: ce
+
+gitlab:
+  webservice:
+    replicas: 1
+
+nginx-ingress:
+  enabled: true
+  controller:
+    replicaCount: 1
+    service:
+      type: NodePort
+      nodePorts:
+        http: 30010
+        https: 30011
+  defaultBackend:
+    enabled: true
+
+certmanager:
+  install: false
+
+certmanager-issuer:
+  email: "your-email@example.com"
+
+prometheus:
+  install: false
+
+grafana:
+  enabled: false
+
+gitlab-runner:
+  install: false
