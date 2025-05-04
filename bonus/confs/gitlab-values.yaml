@@ -21,6 +21,7 @@ nginx-ingress:
     replicaCount: 1
     service:
       type: NodePort
+      sessionAffinity: "ClientIP"  # <-- FIX: Enable session affinity
       nodePorts:
         http: 30010
         https: 30011
