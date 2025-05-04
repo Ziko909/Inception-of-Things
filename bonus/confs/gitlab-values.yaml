@@ -1,31 +1,27 @@
 global:
   edition: ce
   hosts:
-    domain: ""
-    externalIP: <YOUR_VM_PUBLIC_IP>
-    hostname: <YOUR_VM_PUBLIC_IP>
+    domain: gitlab.local
+    externalIP: 127.0.0.1
+    hostname: gitlab.local
   ingress:
     configureCertmanager: false
     enabled: true
+    class: nginx
     tls:
       enabled: false
-
-gitlab:
-  webservice:
-    replicas: 1
-    ingress:
-      tls:
-        enabled: false
 
 nginx-ingress:
   enabled: true
   controller:
-    replicaCount: 1
     service:
       type: NodePort
       nodePorts:
-        http: 30010
-        https: 30011
+        http: 30080
+    hostPort:
+      enabled: true
+      ports:
+        http: 80
   defaultBackend:
     enabled: true
 
@@ -40,3 +36,4 @@ grafana:
 
 gitlab-runner:
   install: false
+
