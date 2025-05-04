@@ -15,11 +15,11 @@ curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/
 
-# Create cluster
+# Create cluster - FIXED COMMAND
 k3d cluster create gitlab-cluster \
   --servers 1 \
   --agents 2 \
-  --port "30010:30010@loadbalancer" \  # Map host 30010 → k3d loadbalancer 30010
+  --port "30010:30010@loadbalancer" \
   --port "30011:30011@loadbalancer" \
   --wait
 

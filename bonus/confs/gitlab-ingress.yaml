@@ -3,9 +3,12 @@ kind: Ingress
 metadata:
   name: gitlab
   namespace: gitlab
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
+  - host: gitlab.local
+    http:
       paths:
       - path: /
         pathType: Prefix
