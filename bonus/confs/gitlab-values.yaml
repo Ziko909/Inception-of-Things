@@ -2,7 +2,7 @@ global:
   edition: ce
   hosts:
     domain: gitlab.local
-    externalIP: ubuntu-s-2vcpu-8gb-160gb-intel-nyc1-01  # Use your VM's hostname
+    externalIP: <your-vm-public-ip>
     hostname: gitlab.local
   ingress:
     configureCertmanager: false
@@ -22,11 +22,10 @@ nginx-ingress:
   controller:
     replicaCount: 1
     service:
-      type: NodePort  # Changed from LoadBalancer
+      type: NodePort
       nodePorts:
         http: 30010
         https: 30011
-    hostNetwork: true  # Added for better host connectivity
   defaultBackend:
     enabled: true
 
