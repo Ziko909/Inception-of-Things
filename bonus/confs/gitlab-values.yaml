@@ -1,32 +1,37 @@
 global:
   edition: ce
-  hosts:
-    domain: gitlab.local
-    externalIP: 127.0.0.1
-    hostname: gitlab.local
-  ingress:
-    configureCertmanager: false
-    enabled: true
-    class: nginx
-    tls:
-      enabled: false
+
+gitlab:
+  webservice:
+    replicas: 1
+    ingress:
+      configureCertmanager: false
+      tls:
+        enabled: false
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+      hosts:
+        - name: 167.172.153.84.nip.io
+          path: /
+          tls: false
 
 nginx-ingress:
   enabled: true
   controller:
+    replicaCount: 1
     service:
       type: NodePort
       nodePorts:
-        http: 30080
-    hostPort:
-      enabled: true
-      ports:
-        http: 80
+        http: 30010
+        https: 30011
   defaultBackend:
     enabled: true
 
 certmanager:
   install: false
+
+certmanager-issuer:
+  email: "your-email@example.com"
 
 prometheus:
   install: false
@@ -36,4 +41,3 @@ grafana:
 
 gitlab-runner:
   install: false
-
