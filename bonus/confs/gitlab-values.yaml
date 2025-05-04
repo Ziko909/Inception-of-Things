@@ -1,9 +1,9 @@
 global:
   edition: ce
   hosts:
-    domain: gitlab.local
-    externalIP: <your-vm-public-ip>
-    hostname: gitlab.local
+    domain: ""
+    externalIP: <YOUR_VM_PUBLIC_IP>
+    hostname: <YOUR_VM_PUBLIC_IP>
   ingress:
     configureCertmanager: false
     enabled: true
