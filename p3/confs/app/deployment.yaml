@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: playground
-        image: ziko909/my-spring-app:v2 # Updated to your Docker Hub repo
+        image: ziko909/my-spring-app:v1 # Updated to your Docker Hub repo
         ports:
         - containerPort: 8080  # Changed from 8888 to match Spring Boot default
         env:
